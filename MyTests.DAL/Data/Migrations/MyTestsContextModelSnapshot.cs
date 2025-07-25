@@ -22,7 +22,7 @@ namespace MyTests.DAL.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("MyTests.Domain.Entities.ProductEntity", b =>
+            modelBuilder.Entity("MyTests.DAL.Entities.ProductEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -46,7 +46,7 @@ namespace MyTests.DAL.Data.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("MyTests.Domain.Entities.RefreshTokenEntity", b =>
+            modelBuilder.Entity("MyTests.DAL.Entities.RefreshTokenEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -73,7 +73,7 @@ namespace MyTests.DAL.Data.Migrations
                     b.ToTable("RefreshTokens");
                 });
 
-            modelBuilder.Entity("MyTests.Domain.Entities.UserEntity", b =>
+            modelBuilder.Entity("MyTests.DAL.Entities.UserEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -106,9 +106,9 @@ namespace MyTests.DAL.Data.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("MyTests.Domain.Entities.RefreshTokenEntity", b =>
+            modelBuilder.Entity("MyTests.DAL.Entities.RefreshTokenEntity", b =>
                 {
-                    b.HasOne("MyTests.Domain.Entities.UserEntity", "User")
+                    b.HasOne("MyTests.DAL.Entities.UserEntity", "User")
                         .WithMany("RefreshTokens")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -117,7 +117,7 @@ namespace MyTests.DAL.Data.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("MyTests.Domain.Entities.UserEntity", b =>
+            modelBuilder.Entity("MyTests.DAL.Entities.UserEntity", b =>
                 {
                     b.Navigation("RefreshTokens");
                 });

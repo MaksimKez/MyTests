@@ -12,8 +12,8 @@ using MyTests.DAL;
 namespace MyTests.DAL.Data.Migrations
 {
     [DbContext(typeof(MyTestsContext))]
-    [Migration("20250725105517_IsDeletedUser")]
-    partial class IsDeletedUser
+    [Migration("20250725154239_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,7 +25,7 @@ namespace MyTests.DAL.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("MyTests.Domain.Entities.ProductEntity", b =>
+            modelBuilder.Entity("MyTests.DAL.Entities.ProductEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -49,13 +49,11 @@ namespace MyTests.DAL.Data.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("MyTests.Domain.Entities.RefreshTokenEntity", b =>
+            modelBuilder.Entity("MyTests.DAL.Entities.RefreshTokenEntity", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -68,8 +66,8 @@ namespace MyTests.DAL.Data.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
@@ -78,13 +76,11 @@ namespace MyTests.DAL.Data.Migrations
                     b.ToTable("RefreshTokens");
                 });
 
-            modelBuilder.Entity("MyTests.Domain.Entities.UserEntity", b =>
+            modelBuilder.Entity("MyTests.DAL.Entities.UserEntity", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -113,9 +109,9 @@ namespace MyTests.DAL.Data.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("MyTests.Domain.Entities.RefreshTokenEntity", b =>
+            modelBuilder.Entity("MyTests.DAL.Entities.RefreshTokenEntity", b =>
                 {
-                    b.HasOne("MyTests.Domain.Entities.UserEntity", "User")
+                    b.HasOne("MyTests.DAL.Entities.UserEntity", "User")
                         .WithMany("RefreshTokens")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -124,7 +120,7 @@ namespace MyTests.DAL.Data.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("MyTests.Domain.Entities.UserEntity", b =>
+            modelBuilder.Entity("MyTests.DAL.Entities.UserEntity", b =>
                 {
                     b.Navigation("RefreshTokens");
                 });
