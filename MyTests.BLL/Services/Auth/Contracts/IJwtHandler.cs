@@ -1,4 +1,5 @@
 using MyTests.BLL.Models;
+using MyTests.BLL.Models.AuthRelated;
 
 namespace MyTests.BLL.Services.Auth.Contracts;
 

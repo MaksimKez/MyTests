@@ -1,3 +1,5 @@
+using MyTests.BLL.Models.AuthRelated;
+
 namespace MyTests.BLL.Models;
 
 public class User
