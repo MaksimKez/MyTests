@@ -1,4 +1,4 @@
-namespace MyTests.BLL.Models;
+namespace MyTests.BLL.Models.AuthRelated;
 
 public class JwtOptions
 {

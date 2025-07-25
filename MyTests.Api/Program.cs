@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MyTests.BLL.Models;
+using MyTests.BLL.Models.AuthRelated;
 using MyTests.BLL.Services.Auth;
 using MyTests.BLL.Services.Auth.Contracts;
 using MyTests.DAL;
