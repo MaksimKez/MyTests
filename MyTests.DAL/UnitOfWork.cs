@@ -1,6 +1,6 @@
+using MyTests.DAL.Entities;
 using MyTests.DAL.Repositories;
-using MyTests.Domain.Contracts;
-using MyTests.Domain.Entities;
+using MyTests.DAL.Repositories.Contracts;
 
 namespace MyTests.DAL;
 

@@ -1,6 +1,6 @@
-using MyTests.Domain.Entities;
+using MyTests.DAL.Entities;
 
-namespace MyTests.Domain.Contracts;
+namespace MyTests.DAL.Repositories.Contracts;
 
 public interface IUnitOfWork : IDisposable
 {

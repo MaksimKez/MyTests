@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using MyTests.Domain.Entities;
+using MyTests.DAL.Entities;
 
 namespace MyTests.DAL.EntityConfigs;
 

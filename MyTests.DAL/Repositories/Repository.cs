@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using MyTests.Domain.Contracts;
+using MyTests.DAL.Repositories.Contracts;
 
 namespace MyTests.DAL.Repositories;
 

@@ -1,6 +1,6 @@
-namespace MyTests.Domain.Entities;
+namespace MyTests.BLL.Models;
 
-public class ProductEntity
+public class Product
 {
     public Guid Id { get; set; }
     public string Title { get; set; }

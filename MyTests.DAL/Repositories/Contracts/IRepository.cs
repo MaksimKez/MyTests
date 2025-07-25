@@ -1,4 +1,4 @@
-namespace MyTests.Domain.Contracts;
+namespace MyTests.DAL.Repositories.Contracts;
 
 public interface IRepository<TEntity> where TEntity : class
 {

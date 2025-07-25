@@ -1,4 +1,4 @@
-using MyTests.Domain.Entities;
+using MyTests.DAL.Entities;
 
 namespace MyTests.DAL.Extentions;
 

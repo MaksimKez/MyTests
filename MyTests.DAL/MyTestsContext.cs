@@ -1,6 +1,6 @@
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
-using MyTests.Domain.Entities;
+using MyTests.DAL.Entities;
 
 namespace MyTests.DAL;
 

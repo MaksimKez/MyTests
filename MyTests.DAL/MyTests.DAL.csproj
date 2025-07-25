@@ -20,8 +20,4 @@
       </PackageReference>
     </ItemGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\MyTests.Domain\MyTests.Domain.csproj" />
-    </ItemGroup>
-
 </Project>
