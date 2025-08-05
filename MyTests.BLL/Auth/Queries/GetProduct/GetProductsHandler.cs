@@ -1,4 +1,5 @@
 using AutoMapper;
+using MediatR;
 using MyTests.BLL.Models;
 using MyTests.DAL.Entities;
 using MyTests.DAL.Repositories.Contracts;
@@ -6,7 +7,6 @@ using MyTests.DAL.Specifications;
 
 namespace MyTests.BLL.Auth.Queries.GetProduct;
 
-using MediatR;
 
 public class GetProductsHandler(IRepository<ProductEntity> repository, IMapper mapper)
     : IRequestHandler<GetProductsQuery, ICollection<Product>>
@@ -14,8 +14,8 @@ public class GetProductsHandler(IRepository<ProductEntity> repository, IMapper m
     public async Task<ICollection<Product>> Handle(GetProductsQuery request, CancellationToken cancellationToken)
     {
         var filters = request.Filters;
-        int skip = (filters.Page - 1) * filters.PageSize;
-        int take = filters.PageSize;
+        var skip = (filters.Page - 1) * filters.PageSize;
+        var take = filters.PageSize;
 
         var spec = new FilteredProductsSpec(
             filters.MinPrice,
