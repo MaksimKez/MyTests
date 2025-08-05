@@ -5,7 +5,7 @@ using MyTests.BLL.Services.Auth.Contracts;
 using MyTests.DAL.Entities;
 using MyTests.DAL.Repositories.Contracts;
 
-namespace MyTests.BLL.Auth.Commands;
+namespace MyTests.BLL.Auth.Commands.RegisterUser;
 
 public class RegisterUserHandler : IRequestHandler<RegisterUserCommand, Guid>
 {

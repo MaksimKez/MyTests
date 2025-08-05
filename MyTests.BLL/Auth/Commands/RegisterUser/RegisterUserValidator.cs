@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace MyTests.BLL.Auth.Commands;
+namespace MyTests.BLL.Auth.Commands.RegisterUser;
 
 public class RegisterUserValidator : AbstractValidator<RegisterUserCommand>
 {

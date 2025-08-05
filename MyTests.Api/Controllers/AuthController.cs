@@ -1,6 +1,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using MyTests.BLL.Auth.Commands;
+using MyTests.BLL.Auth.Commands.RegisterUser;
 
 namespace MyTests.Api.Controllers;
 

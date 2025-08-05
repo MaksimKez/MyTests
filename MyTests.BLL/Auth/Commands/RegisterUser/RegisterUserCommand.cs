@@ -1,6 +1,5 @@
 using MediatR;
-using MyTests.BLL.Models;
 
-namespace MyTests.BLL.Auth.Commands;
+namespace MyTests.BLL.Auth.Commands.RegisterUser;
 
 public record RegisterUserCommand(string Email, string Password) : IRequest<Guid>;
